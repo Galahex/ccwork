@@ -54,6 +54,19 @@ interface Note {
 
 `createNote`/`updateNote` 호출 시 `createdAt`/`updatedAt`은 API 레이어에서 자동 주입.
 
+## 규칙
+
+> **컴포넌트는 반드시 named export만 사용한다. `export default`는 절대 사용하지 않는다.**
+>
+> ```ts
+> // ✅ 올바름
+> export function NoteList() { ... }
+>
+> // ❌ 금지
+> export default function NoteList() { ... }
+> const NoteList = () => { ... }; export default NoteList;
+> ```
+
 ## 구현 패턴
 
 ### 컴포넌트 패턴
